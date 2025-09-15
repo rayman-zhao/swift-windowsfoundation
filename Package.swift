@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "WindowsFoundation", type: .static, targets: ["WindowsFoundation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/rayman-zhao/swift-cwinrt", branch: "main"),
+        .package(url: "https://github.com/rayman-zhao/swift-cwinrt", branch: "wasdk1.8"),
     ],
     targets: [
         .target(
