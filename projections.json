@@ -7,9 +7,10 @@
   "dependencies": [
   ],
   "include": [
+    "Windows.Foundation",
     "Windows.Foundation.Collections",
-    "Windows.Foundation.Numerics",
-    "Windows.Foundation"
+    "Windows.Foundation.Metadata",
+    "Windows.Foundation.Numerics"
   ],
   "exclude": [
     "Windows.Foundation.PropertyValue"
