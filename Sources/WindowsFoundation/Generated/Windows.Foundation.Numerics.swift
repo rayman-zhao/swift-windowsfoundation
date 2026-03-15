@@ -3,6 +3,8 @@
 import Foundation
 import CWinRT
 
+// MARK: - Matrix3x2
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2)
 public struct Matrix3x2: Hashable, Codable, Sendable {
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2.m11)
@@ -27,6 +29,26 @@ public struct Matrix3x2: Hashable, Codable, Sendable {
         self.m32 = m32
     }
 }
+
+// MARK: - Matrix3x2 Internals
+
+@_spi(WinRTInternal)
+extension Matrix3x2: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2
+    public static func from(abi: ABI) -> Self {
+        .init(m11: abi.M11, m12: abi.M12, m21: abi.M21, m22: abi.M22, m31: abi.M31, m32: abi.M32)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 {
+    public static func from(swift: WindowsFoundation.Matrix3x2) -> __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 {
+        .init(M11: swift.m11, M12: swift.m12, M21: swift.m21, M22: swift.m22, M31: swift.m31, M32: swift.m32)
+    }
+}
+// MARK: - Matrix4x4
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.matrix4x4)
 public struct Matrix4x4: Hashable, Codable, Sendable {
@@ -83,6 +105,26 @@ public struct Matrix4x4: Hashable, Codable, Sendable {
     }
 }
 
+// MARK: - Matrix4x4 Internals
+
+@_spi(WinRTInternal)
+extension Matrix4x4: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4
+    public static func from(abi: ABI) -> Self {
+        .init(m11: abi.M11, m12: abi.M12, m13: abi.M13, m14: abi.M14, m21: abi.M21, m22: abi.M22, m23: abi.M23, m24: abi.M24, m31: abi.M31, m32: abi.M32, m33: abi.M33, m34: abi.M34, m41: abi.M41, m42: abi.M42, m43: abi.M43, m44: abi.M44)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4 {
+    public static func from(swift: WindowsFoundation.Matrix4x4) -> __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4 {
+        .init(M11: swift.m11, M12: swift.m12, M13: swift.m13, M14: swift.m14, M21: swift.m21, M22: swift.m22, M23: swift.m23, M24: swift.m24, M31: swift.m31, M32: swift.m32, M33: swift.m33, M34: swift.m34, M41: swift.m41, M42: swift.m42, M43: swift.m43, M44: swift.m44)
+    }
+}
+// MARK: - Vector3
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.vector3)
 public struct Vector3: Hashable, Codable, Sendable {
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.vector3.x)
@@ -99,6 +141,26 @@ public struct Vector3: Hashable, Codable, Sendable {
     }
 }
 
+// MARK: - Vector3 Internals
+
+@_spi(WinRTInternal)
+extension Vector3: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CVector3
+    public static func from(abi: ABI) -> Self {
+        .init(x: abi.X, y: abi.Y, z: abi.Z)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CVector3 {
+    public static func from(swift: WindowsFoundation.Vector3) -> __x_ABI_CWindows_CFoundation_CNumerics_CVector3 {
+        .init(X: swift.x, Y: swift.y, Z: swift.z)
+    }
+}
+// MARK: - Plane
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.plane)
 public struct Plane: Hashable, Codable, Sendable {
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.plane.normal)
@@ -111,6 +173,26 @@ public struct Plane: Hashable, Codable, Sendable {
         self.d = d
     }
 }
+
+// MARK: - Plane Internals
+
+@_spi(WinRTInternal)
+extension Plane: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CPlane
+    public static func from(abi: ABI) -> Self {
+        .init(normal: .from(abi: abi.Normal), d: abi.D)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CPlane {
+    public static func from(swift: WindowsFoundation.Plane) -> __x_ABI_CWindows_CFoundation_CNumerics_CPlane {
+        .init(Normal: .from(swift: swift.normal), D: swift.d)
+    }
+}
+// MARK: - Quaternion
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.quaternion)
 public struct Quaternion: Hashable, Codable, Sendable {
@@ -131,6 +213,26 @@ public struct Quaternion: Hashable, Codable, Sendable {
     }
 }
 
+// MARK: - Quaternion Internals
+
+@_spi(WinRTInternal)
+extension Quaternion: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion
+    public static func from(abi: ABI) -> Self {
+        .init(x: abi.X, y: abi.Y, z: abi.Z, w: abi.W)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion {
+    public static func from(swift: WindowsFoundation.Quaternion) -> __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion {
+        .init(X: swift.x, Y: swift.y, Z: swift.z, W: swift.w)
+    }
+}
+// MARK: - Rational
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.rational)
 public struct Rational: Hashable, Codable, Sendable {
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.rational.numerator)
@@ -144,6 +246,26 @@ public struct Rational: Hashable, Codable, Sendable {
     }
 }
 
+// MARK: - Rational Internals
+
+@_spi(WinRTInternal)
+extension Rational: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CRational
+    public static func from(abi: ABI) -> Self {
+        .init(numerator: abi.Numerator, denominator: abi.Denominator)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CRational {
+    public static func from(swift: WindowsFoundation.Rational) -> __x_ABI_CWindows_CFoundation_CNumerics_CRational {
+        .init(Numerator: swift.numerator, Denominator: swift.denominator)
+    }
+}
+// MARK: - Vector2
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.vector2)
 public struct Vector2: Hashable, Codable, Sendable {
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.vector2.x)
@@ -156,6 +278,26 @@ public struct Vector2: Hashable, Codable, Sendable {
         self.y = y
     }
 }
+
+// MARK: - Vector2 Internals
+
+@_spi(WinRTInternal)
+extension Vector2: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CVector2
+    public static func from(abi: ABI) -> Self {
+        .init(x: abi.X, y: abi.Y)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CVector2 {
+    public static func from(swift: WindowsFoundation.Vector2) -> __x_ABI_CWindows_CFoundation_CNumerics_CVector2 {
+        .init(X: swift.x, Y: swift.y)
+    }
+}
+// MARK: - Vector4
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.numerics.vector4)
 public struct Vector4: Hashable, Codable, Sendable {
@@ -176,3 +318,21 @@ public struct Vector4: Hashable, Codable, Sendable {
     }
 }
 
+// MARK: - Vector4 Internals
+
+@_spi(WinRTInternal)
+extension Vector4: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CFoundation_CNumerics_CVector4
+    public static func from(abi: ABI) -> Self {
+        .init(x: abi.X, y: abi.Y, z: abi.Z, w: abi.W)
+    }
+    public func toABI() -> ABI {
+        .from(swift: self)
+    }
+}
+
+extension __x_ABI_CWindows_CFoundation_CNumerics_CVector4 {
+    public static func from(swift: WindowsFoundation.Vector4) -> __x_ABI_CWindows_CFoundation_CNumerics_CVector4 {
+        .init(X: swift.x, Y: swift.y, Z: swift.z, W: swift.w)
+    }
+}

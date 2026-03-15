@@ -4,5 +4,4 @@ import Foundation
 import CWinRT
 
 @_spi(WinRTInternal)
-public enum __IMPL_Windows_Foundation_Metadata {
-}
+public enum __IMPL_Windows_Foundation_Metadata {}

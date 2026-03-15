@@ -3,6 +3,11 @@
 import Foundation
 import CWinRT
 
+// MARK: - GCPressureAmount
+
+
+// MARK: - ApiInformation
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation)
 public final class ApiInformation {
     private static let _IApiInformationStatics: __ABI_Windows_Foundation_Metadata.IApiInformationStatics = try! RoGetActivationFactory("Windows.Foundation.Metadata.ApiInformation")
@@ -58,3 +63,114 @@ public final class ApiInformation {
 
 }
 
+// MARK: - ApiInformation Internals
+
+@_spi(WinRTInternal)
+extension __ABI_Windows_Foundation_Metadata {
+    private static let IID___x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics: WindowsFoundation.IID = .init(
+        Data1: 0x997439FE, Data2: 0xF681, Data3: 0x4A11, Data4: ( 0xB4,0x16,0xC1,0x3A,0x47,0xE8,0xBA,0x36 ) // 997439FE-F681-4A11-B416-C13A47E8BA36
+    ) 
+
+    public class IApiInformationStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics }
+
+        public func IsTypePresent(_ typeName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsTypePresent(pThis, _typeName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsMethodPresent(_ typeName: String, _ methodName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _methodName = try! HString(methodName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsMethodPresent(pThis, _typeName.get(), _methodName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsMethodPresentWithArity(_ typeName: String, _ methodName: String, _ inputParameterCount: UInt32) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _methodName = try! HString(methodName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsMethodPresentWithArity(pThis, _typeName.get(), _methodName.get(), inputParameterCount, &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsEventPresent(_ typeName: String, _ eventName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _eventName = try! HString(eventName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsEventPresent(pThis, _typeName.get(), _eventName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsPropertyPresent(_ typeName: String, _ propertyName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _propertyName = try! HString(propertyName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsPropertyPresent(pThis, _typeName.get(), _propertyName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsReadOnlyPropertyPresent(_ typeName: String, _ propertyName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _propertyName = try! HString(propertyName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsReadOnlyPropertyPresent(pThis, _typeName.get(), _propertyName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsWriteablePropertyPresent(_ typeName: String, _ propertyName: String) throws -> Bool {
+            var result: boolean = 0
+            let _typeName = try! HString(typeName)
+            let _propertyName = try! HString(propertyName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsWriteablePropertyPresent(pThis, _typeName.get(), _propertyName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsEnumNamedValuePresent(_ enumTypeName: String, _ valueName: String) throws -> Bool {
+            var result: boolean = 0
+            let _enumTypeName = try! HString(enumTypeName)
+            let _valueName = try! HString(valueName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsEnumNamedValuePresent(pThis, _enumTypeName.get(), _valueName.get(), &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsApiContractPresentByMajor(_ contractName: String, _ majorVersion: UInt16) throws -> Bool {
+            var result: boolean = 0
+            let _contractName = try! HString(contractName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsApiContractPresentByMajor(pThis, _contractName.get(), majorVersion, &result))
+            }
+            return .init(from: result)
+        }
+
+        public func IsApiContractPresentByMajorAndMinor(_ contractName: String, _ majorVersion: UInt16, _ minorVersion: UInt16) throws -> Bool {
+            var result: boolean = 0
+            let _contractName = try! HString(contractName)
+            _ = try perform(as: __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.IsApiContractPresentByMajorAndMinor(pThis, _contractName.get(), majorVersion, minorVersion, &result))
+            }
+            return .init(from: result)
+        }
+
+    }
+
+}

@@ -43,7 +43,7 @@ fileprivate enum IWeakReferenceSourceBridge: AbiBridge {
         return C_IWeakReferenceSource(lpVtbl: &IWeakReferenceSourceVTable)
     }
 
-    static func from(abi: ComPtr<C_IWeakReferenceSource>?) -> AnyObject? {
+    static func from(abi: consuming ComPtr<C_IWeakReferenceSource>?) -> AnyObject? {
         fatalError("Not needed")
     }
 }
@@ -58,7 +58,7 @@ fileprivate var IWeakReferenceSourceVTable: C_IWeakReferenceSourceVtbl = .init(
 fileprivate func GetWeakReference(
         _ this: UnsafeMutablePointer<C_IWeakReferenceSource>?,
         _ weakReference: UnsafeMutablePointer<UnsafeMutablePointer<C_IWeakReference>?>?) -> HRESULT {
-    guard let object = WeakReferenceSourceWrapper.tryUnwrapFrom(abi: ComPtr(this)) else { return E_FAIL }
+    guard let this, let object = WeakReferenceSourceWrapper.tryUnwrapFrom(abi: ComPtr(this)) else { return E_FAIL }
     guard let weakReference else { return E_INVALIDARG }
     do {
         var rawWeakReference: UnsafeMutableRawPointer? = nil
