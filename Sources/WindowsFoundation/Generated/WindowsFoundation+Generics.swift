@@ -7,7 +7,7 @@ private var IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IIns
     .init(Data1: 0xfe2f3d47, Data2: 0x5d47, Data3: 0x5499, Data4: ( 0x83,0x74,0x43,0x0c,0x7c,0xda,0x02,0x04 ))// fe2f3d47-5d47-5499-8374-430c7cda0204
 }
 
-internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.release($0) },
@@ -44,7 +44,7 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspec
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IIterableIKeyValuePairString_Any: WindowsFoundation.IInspectable {
+public class IIterableIKeyValuePairString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
     open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
@@ -73,7 +73,7 @@ internal enum __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspe
     }
 }
 
-fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IIterable, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IIterable, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, Any?>?
     typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge
     let _default: Bridge.SwiftABI
@@ -94,7 +94,7 @@ private var IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTR
     .init(Data1: 0xe9bdaaf0, Data2: 0xcbf6, Data3: 0x5c72, Data4: ( 0xbe,0x90,0x29,0xcb,0xf3,0xa1,0x31,0x9b ))// e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b
 }
 
-internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -131,7 +131,7 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
     open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
@@ -160,7 +160,7 @@ internal enum __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRIN
     }
 }
 
-fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IIterable, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IIterable, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, String>?
     typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge
     let _default: Bridge.SwiftABI
@@ -181,7 +181,7 @@ private var IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwForm
     .init(Data1: 0x876be83b, Data2: 0x7218, Data3: 0x5bfb, Data4: ( 0xa1,0x69,0x83,0x15,0x2e,0xf7,0xe1,0x46 ))// 876be83b-7218-5bfb-a169-83152ef7e146
 }
 
-internal var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.release($0) },
@@ -218,7 +218,7 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrl
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IIterableIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+public class IIterableIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
     open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIWwwFormUrlDecoderEntry?>? {
@@ -247,7 +247,7 @@ internal enum __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUr
     }
 }
 
-fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IIterable, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IIterable, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIWwwFormUrlDecoderEntry?
     typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge
     let _default: Bridge.SwiftABI
@@ -268,7 +268,7 @@ private var IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IIns
     .init(Data1: 0x5db5fa32, Data2: 0x707c, Data3: 0x5849, Data4: ( 0xa0,0x6b,0x91,0xc8,0xeb,0x9d,0x10,0xe8 ))// 5db5fa32-707c-5849-a06b-91c8eb9d10e8
 }
 
-internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.release($0) },
@@ -328,7 +328,7 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspec
     }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
+public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
     open func get_Current() throws -> WindowsFoundation.AnyIKeyValuePair<String, Any?>? {
@@ -358,11 +358,20 @@ public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
 
     open func GetMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, Any?>?]) throws -> UInt32 {
         var result: UINT32 = 0
-        try items.toABI(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self) { _items in
+        var _itemsBuffer = Array<UnsafeMutablePointer<__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable>?>(repeating: nil, count: items.count)
+        try _itemsBuffer.withUnsafeMutableBufferPointer { buffer in
+            let _items: WinRTArrayAbi<UnsafeMutablePointer<__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable>?> = (UInt32(buffer.count), buffer.baseAddress)
+            defer {
+                if let start = _items.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_items.count)) {
+                        _ = element?.pointee.lpVtbl.pointee.Release(element)
+                    }
+                }
+            }
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
             }
-        items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self, abi: _items)
+            items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self, abi: _items)
         }
         return result
     }
@@ -384,7 +393,7 @@ internal enum __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspe
     }
 }
 
-fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IIterator, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IIterator, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, Any?>?
     typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge
     let _default: Bridge.SwiftABI
@@ -420,7 +429,7 @@ private var IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTR
     .init(Data1: 0x05eb86f1, Data2: 0x7140, Data3: 0x5517, Data4: ( 0xb8,0x8d,0xcb,0xae,0xbe,0x57,0xe6,0xb1 ))// 05eb86f1-7140-5517-b88d-cbaebe57e6b1
 }
 
-internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -480,7 +489,7 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
     }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
     open func get_Current() throws -> WindowsFoundation.AnyIKeyValuePair<String, String>? {
@@ -510,11 +519,20 @@ public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable
 
     open func GetMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, String>?]) throws -> UInt32 {
         var result: UINT32 = 0
-        try items.toABI(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self) { _items in
+        var _itemsBuffer = Array<UnsafeMutablePointer<__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING>?>(repeating: nil, count: items.count)
+        try _itemsBuffer.withUnsafeMutableBufferPointer { buffer in
+            let _items: WinRTArrayAbi<UnsafeMutablePointer<__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING>?> = (UInt32(buffer.count), buffer.baseAddress)
+            defer {
+                if let start = _items.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_items.count)) {
+                        _ = element?.pointee.lpVtbl.pointee.Release(element)
+                    }
+                }
+            }
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
             }
-        items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: _items)
+            items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: _items)
         }
         return result
     }
@@ -536,7 +554,7 @@ internal enum __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRIN
     }
 }
 
-fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IIterator, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IIterator, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, String>?
     typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge
     let _default: Bridge.SwiftABI
@@ -572,7 +590,7 @@ private var IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwForm
     .init(Data1: 0x32e54295, Data2: 0x373c, Data3: 0x50cb, Data4: ( 0x80,0xa1,0x46,0x8a,0x99,0x0c,0xa7,0x80 ))// 32e54295-373c-50cb-80a1-468a990ca780
 }
 
-internal var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
     QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.addRef($0) },
     Release: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.release($0) },
@@ -632,7 +650,7 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrl
     }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
     open func get_Current() throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
@@ -662,11 +680,20 @@ public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
 
     open func GetMany(_ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) throws -> UInt32 {
         var result: UINT32 = 0
-        try items.toABI(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self) { _items in
+        var _itemsBuffer = Array<UnsafeMutablePointer<__x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry>?>(repeating: nil, count: items.count)
+        try _itemsBuffer.withUnsafeMutableBufferPointer { buffer in
+            let _items: WinRTArrayAbi<UnsafeMutablePointer<__x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry>?> = (UInt32(buffer.count), buffer.baseAddress)
+            defer {
+                if let start = _items.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_items.count)) {
+                        _ = element?.pointee.lpVtbl.pointee.Release(element)
+                    }
+                }
+            }
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
             }
-        items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
+            items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
         }
         return result
     }
@@ -688,7 +715,7 @@ internal enum __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUr
     }
 }
 
-fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IIterator, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IIterator, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIWwwFormUrlDecoderEntry?
     typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge
     let _default: Bridge.SwiftABI
@@ -724,7 +751,7 @@ private var IID___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable: WindowsFoundat
     .init(Data1: 0x09335560, Data2: 0x6c6b, Data3: 0x5a26, Data4: ( 0x93,0x48,0x97,0xb7,0x81,0x13,0x2b,0x20 ))// 09335560-6c6b-5a26-9348-97b781132b20
 }
 
-internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.release($0) },
@@ -768,15 +795,17 @@ internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__
     }
 )
 typealias __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IKeyValuePairString_Any: WindowsFoundation.IInspectable {
+public class IKeyValuePairString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
     open func get_Key() throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
@@ -806,7 +835,7 @@ internal enum __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge : AbiInterf
     }
 }
 
-fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IKeyValuePair, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IKeyValuePair, AbiInterfaceImpl, @unchecked Sendable {
     typealias K = String
     typealias V = Any?
     typealias Bridge = __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge
@@ -833,7 +862,7 @@ private var IID___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING: WindowsFoundation.I
     .init(Data1: 0x60310303, Data2: 0x49c5, Data3: 0x52e6, Data4: ( 0xab,0xc6,0xa9,0xb3,0x6e,0xcc,0xc7,0x16 ))// 60310303-49c5-52e6-abc6-a9b36eccc716
 }
 
-internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -876,24 +905,28 @@ internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIKey
     }
 )
 typealias __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IKeyValuePairString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
     open func get_Key() throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
     open func get_Value() throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
@@ -914,7 +947,7 @@ internal enum __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge : AbiInterfaceBr
     }
 }
 
-fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IKeyValuePair, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IKeyValuePair, AbiInterfaceImpl, @unchecked Sendable {
     typealias K = String
     typealias V = String
     typealias Bridge = __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge
@@ -941,7 +974,7 @@ private var IID___x_ABI_C__FIMapChangedEventArgs_1_HSTRING: WindowsFoundation.II
     .init(Data1: 0x60141efb, Data2: 0xf2f9, Data3: 0x5377, Data4: ( 0x96,0xfd,0xf8,0xc6,0x0d,0x95,0x58,0xb5 ))// 60141efb-f2f9-5377-96fd-f8c60d9558b5
 }
 
-internal var __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVTable: __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVTable: __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.release($0) },
@@ -984,7 +1017,7 @@ internal var __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVTable: __x_ABI_C__FIMapC
     }
 )
 typealias __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGBridge>
-public class IMapChangedEventArgsString: WindowsFoundation.IInspectable {
+public class IMapChangedEventArgsString: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapChangedEventArgs_1_HSTRING }
 
     open func get_CollectionChange() throws -> WindowsFoundation.CollectionChange {
@@ -997,10 +1030,12 @@ public class IMapChangedEventArgsString: WindowsFoundation.IInspectable {
 
     open func get_Key() throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         _ = try perform(as: __x_ABI_C__FIMapChangedEventArgs_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
@@ -1021,7 +1056,7 @@ internal enum __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGBridge : AbiInterfaceBri
     }
 }
 
-fileprivate class __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGImpl : IMapChangedEventArgs, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGImpl : IMapChangedEventArgs, AbiInterfaceImpl, @unchecked Sendable {
     typealias K = String
     typealias Bridge = __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGBridge
     let _default: Bridge.SwiftABI
@@ -1047,7 +1082,7 @@ private var IID___x_ABI_C__FIMapView_2_HSTRING_IInspectable: WindowsFoundation.I
     .init(Data1: 0xbb78502a, Data2: 0xf79d, Data3: 0x54fa, Data4: ( 0x92,0xc9,0x90,0xc5,0x03,0x9f,0xdf,0x7e ))// bb78502a-f79d-54fa-92c9-90c5039fdf7e
 }
 
-internal var __x_ABI_C__FIMapView_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMapView_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIMapView_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMapView_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper.release($0) },
@@ -1113,7 +1148,7 @@ internal var __x_ABI_C__FIMapView_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap
     }
 )
 typealias __x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_IInspectableBridge>
-public class IMapViewString_Any: WindowsFoundation.IInspectable {
+public class IMapViewString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapView_2_HSTRING_IInspectable }
 
     open func Lookup(_ key: String) throws -> Any? {
@@ -1145,7 +1180,13 @@ public class IMapViewString_Any: WindowsFoundation.IInspectable {
 
     open func Split(_ first: inout WindowsFoundation.AnyIMapView<String, Any?>?, _ second: inout WindowsFoundation.AnyIMapView<String, Any?>?) throws {
         var _firstAbi: UnsafeMutablePointer<__x_ABI_C__FIMapView_2_HSTRING_IInspectable>?
+        defer {
+            _ = _firstAbi?.pointee.lpVtbl.pointee.Release(_firstAbi)
+        }
         var _secondAbi: UnsafeMutablePointer<__x_ABI_C__FIMapView_2_HSTRING_IInspectable>?
+        defer {
+            _ = _secondAbi?.pointee.lpVtbl.pointee.Release(_secondAbi)
+        }
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Split(pThis, &_firstAbi, &_secondAbi))
         }
@@ -1170,7 +1211,7 @@ internal enum __x_ABI_C__FIMapView_2_HSTRING_IInspectableBridge : AbiInterfaceBr
     }
 }
 
-fileprivate class __x_ABI_C__FIMapView_2_HSTRING_IInspectableImpl : IMapView, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIMapView_2_HSTRING_IInspectableImpl : IMapView, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, Any?>?
     typealias K = String
     typealias V = Any?
@@ -1214,7 +1255,7 @@ private var IID___x_ABI_C__FIMapView_2_HSTRING_HSTRING: WindowsFoundation.IID {
     .init(Data1: 0xac7f26f2, Data2: 0xfeb7, Data3: 0x5b2a, Data4: ( 0x8a,0xc4,0x34,0x5b,0xc6,0x2c,0xae,0xde ))// ac7f26f2-feb7-5b2a-8ac4-345bc62caede
 }
 
-internal var __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -1279,16 +1320,18 @@ internal var __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMapView_
     }
 )
 typealias __x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_HSTRINGBridge>
-public class IMapViewString_String: WindowsFoundation.IInspectable {
+public class IMapViewString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapView_2_HSTRING_HSTRING }
 
     open func Lookup(_ key: String) throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Lookup(pThis, _key.get(), &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
@@ -1311,7 +1354,13 @@ public class IMapViewString_String: WindowsFoundation.IInspectable {
 
     open func Split(_ first: inout WindowsFoundation.AnyIMapView<String, String>?, _ second: inout WindowsFoundation.AnyIMapView<String, String>?) throws {
         var _firstAbi: UnsafeMutablePointer<__x_ABI_C__FIMapView_2_HSTRING_HSTRING>?
+        defer {
+            _ = _firstAbi?.pointee.lpVtbl.pointee.Release(_firstAbi)
+        }
         var _secondAbi: UnsafeMutablePointer<__x_ABI_C__FIMapView_2_HSTRING_HSTRING>?
+        defer {
+            _ = _secondAbi?.pointee.lpVtbl.pointee.Release(_secondAbi)
+        }
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Split(pThis, &_firstAbi, &_secondAbi))
         }
@@ -1336,7 +1385,7 @@ internal enum __x_ABI_C__FIMapView_2_HSTRING_HSTRINGBridge : AbiInterfaceBridge 
     }
 }
 
-fileprivate class __x_ABI_C__FIMapView_2_HSTRING_HSTRINGImpl : IMapView, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIMapView_2_HSTRING_HSTRINGImpl : IMapView, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, String>?
     typealias K = String
     typealias V = String
@@ -1380,7 +1429,7 @@ private var IID___x_ABI_C__FIMap_2_HSTRING_IInspectable: WindowsFoundation.IID {
     .init(Data1: 0x1b0d3570, Data2: 0x0877, Data3: 0x5ec2, Data4: ( 0x8a,0x2c,0x3b,0x95,0x39,0x50,0x6a,0xca ))// 1b0d3570-0877-5ec2-8a2c-3b9539506aca
 }
 
-internal var __x_ABI_C__FIMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIMap_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIMap_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIMap_2_HSTRING_IInspectableWrapper.release($0) },
@@ -1464,7 +1513,7 @@ internal var __x_ABI_C__FIMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap_2_H
     }
 )
 typealias __x_ABI_C__FIMap_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMap_2_HSTRING_IInspectableBridge>
-public class IMapString_Any: WindowsFoundation.IInspectable {
+public class IMapString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMap_2_HSTRING_IInspectable }
 
     open func Lookup(_ key: String) throws -> Any? {
@@ -1544,7 +1593,7 @@ internal enum __x_ABI_C__FIMap_2_HSTRING_IInspectableBridge : AbiInterfaceBridge
     }
 }
 
-fileprivate class __x_ABI_C__FIMap_2_HSTRING_IInspectableImpl : IMap, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIMap_2_HSTRING_IInspectableImpl : IMap, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, Any?>?
     typealias K = String
     typealias V = Any?
@@ -1603,7 +1652,7 @@ private var IID___x_ABI_C__FIMap_2_HSTRING_HSTRING: WindowsFoundation.IID {
     .init(Data1: 0xf6d1f700, Data2: 0x49c2, Data3: 0x52ae, Data4: ( 0x81,0x54,0x82,0x6f,0x99,0x08,0x77,0x3c ))// f6d1f700-49c2-52ae-8154-826f9908773c
 }
 
-internal var __x_ABI_C__FIMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMap_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMap_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIMap_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIMap_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIMap_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -1686,16 +1735,18 @@ internal var __x_ABI_C__FIMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMap_2_HSTRIN
     }
 )
 typealias __x_ABI_C__FIMap_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMap_2_HSTRING_HSTRINGBridge>
-public class IMapString_String: WindowsFoundation.IInspectable {
+public class IMapString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMap_2_HSTRING_HSTRING }
 
     open func Lookup(_ key: String) throws -> String {
         var result: HSTRING?
+        defer {
+            WindowsDeleteString(result)
+        }
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Lookup(pThis, _key.get(), &result))
         }
-        defer { WindowsDeleteString(result) }
         return .init(from: result)
     }
 
@@ -1765,7 +1816,7 @@ internal enum __x_ABI_C__FIMap_2_HSTRING_HSTRINGBridge : AbiInterfaceBridge {
     }
 }
 
-fileprivate class __x_ABI_C__FIMap_2_HSTRING_HSTRINGImpl : IMap, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIMap_2_HSTRING_HSTRINGImpl : IMap, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, String>?
     typealias K = String
     typealias V = String
@@ -1824,7 +1875,7 @@ private var IID___x_ABI_C__FIObservableMap_2_HSTRING_IInspectable: WindowsFounda
     .init(Data1: 0x236aac9d, Data2: 0xfb12, Data3: 0x5c4d, Data4: ( 0xa4,0x1c,0x9e,0x44,0x5f,0xb4,0xd7,0xec ))// 236aac9d-fb12-5c4d-a41c-9e445fb4d7ec
 }
 
-internal var __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper.release($0) },
@@ -1870,7 +1921,7 @@ internal var __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVTable: __x_ABI_C_
     }
 )
 typealias __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_IInspectableBridge>
-public class IObservableMapString_Any: WindowsFoundation.IInspectable {
+public class IObservableMapString_Any: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableMap_2_HSTRING_IInspectable }
 
     open func add_MapChanged(_ vhnd: MapChangedEventHandler<String, Any?>?) throws -> EventRegistrationToken {
@@ -1906,7 +1957,7 @@ internal enum __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableBridge : AbiInter
     }
 }
 
-fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableImpl : IObservableMap, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableImpl : IObservableMap, AbiInterfaceImpl, @unchecked Sendable {
     typealias K = String
     typealias V = Any?
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, Any?>?
@@ -1979,7 +2030,7 @@ private var IID___x_ABI_C__FIObservableMap_2_HSTRING_HSTRING: WindowsFoundation.
     .init(Data1: 0x1e036276, Data2: 0x2f60, Data3: 0x55f6, Data4: ( 0xb7,0xf3,0xf8,0x60,0x79,0xe6,0x90,0x0b ))// 1e036276-2f60-55f6-b7f3-f86079e6900b
 }
 
-internal var __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -2025,7 +2076,7 @@ internal var __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIOb
     }
 )
 typealias __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGBridge>
-public class IObservableMapString_String: WindowsFoundation.IInspectable {
+public class IObservableMapString_String: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableMap_2_HSTRING_HSTRING }
 
     open func add_MapChanged(_ vhnd: MapChangedEventHandler<String, String>?) throws -> EventRegistrationToken {
@@ -2061,7 +2112,7 @@ internal enum __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGBridge : AbiInterfaceB
     }
 }
 
-fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGImpl : IObservableMap, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGImpl : IObservableMap, AbiInterfaceImpl, @unchecked Sendable {
     typealias K = String
     typealias V = String
     typealias T = WindowsFoundation.AnyIKeyValuePair<String, String>?
@@ -2134,7 +2185,7 @@ private var IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFo
     .init(Data1: 0xb1f00d3b, Data2: 0x1f06, Data3: 0x5117, Data4: ( 0x93,0xea,0x2a,0x0d,0x79,0x11,0x67,0x01 ))// b1f00d3b-1f06-5117-93ea-2a0d79116701
 }
 
-internal var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVTable: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryVtbl = .init(
     QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.addRef($0) },
     Release: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.release($0) },
@@ -2200,7 +2251,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormU
     }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
     open func GetAt(_ index: UInt32) throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
@@ -2232,11 +2283,20 @@ public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable 
 
     open func GetMany(_ startIndex: UInt32, _ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) throws -> UInt32 {
         var result: UINT32 = 0
-        try items.toABI(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self) { _items in
+        var _itemsBuffer = Array<UnsafeMutablePointer<__x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry>?>(repeating: nil, count: items.count)
+        try _itemsBuffer.withUnsafeMutableBufferPointer { buffer in
+            let _items: WinRTArrayAbi<UnsafeMutablePointer<__x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry>?> = (UInt32(buffer.count), buffer.baseAddress)
+            defer {
+                if let start = _items.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_items.count)) {
+                        _ = element?.pointee.lpVtbl.pointee.Release(element)
+                    }
+                }
+            }
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
             }
-        items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
+            items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
         }
         return result
     }
@@ -2258,7 +2318,7 @@ internal enum __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwForm
     }
 }
 
-fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IVectorView, AbiInterfaceImpl {
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryImpl : IVectorView, AbiInterfaceImpl, @unchecked Sendable {
     typealias T = WindowsFoundation.AnyIWwwFormUrlDecoderEntry?
     typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge
     let _default: Bridge.SwiftABI
@@ -2328,7 +2388,7 @@ internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FMapChangedEvent
     }
 }
 
-internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVTable: __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVTable: __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.release($0) },
@@ -2343,7 +2403,7 @@ internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVTable: __
     }
 )
 typealias __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableBridge>
-public class MapChangedEventHandlerString_Any: WindowsFoundation.IUnknown {
+public class MapChangedEventHandlerString_Any: WindowsFoundation.IUnknown, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectable }
 
     open func Invoke(_ sender: WindowsFoundation.AnyIObservableMap<String, Any?>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
@@ -2383,7 +2443,7 @@ internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FMapChangedEvent
     }
 }
 
-internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVTable: __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVTable: __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVtbl = .init(
     QueryInterface: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.release($0) },
@@ -2398,7 +2458,7 @@ internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVTable: __x_ABI
     }
 )
 typealias __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGBridge>
-public class MapChangedEventHandlerString_String: WindowsFoundation.IUnknown {
+public class MapChangedEventHandlerString_String: WindowsFoundation.IUnknown, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRING }
 
     open func Invoke(_ sender: WindowsFoundation.AnyIObservableMap<String, String>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
@@ -2438,7 +2498,7 @@ internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHand
     }
 }
 
-internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableVtbl = .init(
+internal nonisolated(unsafe) var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableVtbl = .init(
     QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.queryInterface($0, $1, $2) },
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.release($0) },
@@ -2453,7 +2513,7 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIM
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableBridge>
-public class TypedEventHandlerIMemoryBufferReference_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerIMemoryBufferReference_Any: WindowsFoundation.IUnknown, @unchecked Sendable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectable }
 
     open func Invoke(_ sender: WindowsFoundation.AnyIMemoryBufferReference?, _ args: Any?) throws {

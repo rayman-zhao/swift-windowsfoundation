@@ -323,7 +323,7 @@ extension __x_ABI_CWindows_CFoundation_CTimeSpan {
 }
 // MARK: - AsyncActionCompletedHandler
 
-public typealias AsyncActionCompletedHandler = (AnyIAsyncAction?, AsyncStatus) throws -> ()
+public typealias AsyncActionCompletedHandler = @Sendable (AnyIAsyncAction?, AsyncStatus) throws -> ()
 
 // MARK: - AsyncActionCompletedHandler Internals
 
@@ -350,7 +350,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xA4ED5C81, Data2: 0x76C9, Data3: 0x40BD, Data4: ( 0x8B,0xE6,0xB1,0xD9,0x0F,0xB2,0x0A,0xE7 ) // A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7
     ) 
 
-    public class AsyncActionCompletedHandler: WindowsFoundation.IUnknown {
+    public class AsyncActionCompletedHandler: WindowsFoundation.IUnknown, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler }
 
         open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncAction?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
@@ -365,7 +365,7 @@ extension __ABI_Windows_Foundation {
 
 
     typealias AsyncActionCompletedHandlerWrapper = InterfaceWrapperBase<__IMPL_Windows_Foundation.AsyncActionCompletedHandlerBridge>
-    internal static var AsyncActionCompletedHandlerVTable: __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl = .init(
+    internal static nonisolated(unsafe) var AsyncActionCompletedHandlerVTable: __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl = .init(
         QueryInterface: { AsyncActionCompletedHandlerWrapper.queryInterface($0, $1, $2) },
         AddRef: { AsyncActionCompletedHandlerWrapper.addRef($0) },
         Release: { AsyncActionCompletedHandlerWrapper.release($0) },
@@ -389,37 +389,37 @@ public extension WinRTDelegateBridge where CABI == __x_ABI_CWindows_CFoundation_
 
 // MARK: - AsyncActionProgressHandler`1
 
-public typealias AsyncActionProgressHandler<TProgress> = (AnyIAsyncActionWithProgress<TProgress>?, TProgress) throws -> ()
+public typealias AsyncActionProgressHandler<TProgress> = @Sendable (AnyIAsyncActionWithProgress<TProgress>?, TProgress) throws -> ()
 
 // MARK: - AsyncActionProgressHandler`1 Internals
 
 // MARK: - AsyncActionWithProgressCompletedHandler`1
 
-public typealias AsyncActionWithProgressCompletedHandler<TProgress> = (AnyIAsyncActionWithProgress<TProgress>?, AsyncStatus) throws -> ()
+public typealias AsyncActionWithProgressCompletedHandler<TProgress> = @Sendable (AnyIAsyncActionWithProgress<TProgress>?, AsyncStatus) throws -> ()
 
 // MARK: - AsyncActionWithProgressCompletedHandler`1 Internals
 
 // MARK: - AsyncOperationCompletedHandler`1
 
-public typealias AsyncOperationCompletedHandler<TResult> = (AnyIAsyncOperation<TResult>?, AsyncStatus) throws -> ()
+public typealias AsyncOperationCompletedHandler<TResult> = @Sendable (AnyIAsyncOperation<TResult>?, AsyncStatus) throws -> ()
 
 // MARK: - AsyncOperationCompletedHandler`1 Internals
 
 // MARK: - AsyncOperationProgressHandler`2
 
-public typealias AsyncOperationProgressHandler<TResult,TProgress> = (AnyIAsyncOperationWithProgress<TResult, TProgress>?, TProgress) throws -> ()
+public typealias AsyncOperationProgressHandler<TResult,TProgress> = @Sendable (AnyIAsyncOperationWithProgress<TResult, TProgress>?, TProgress) throws -> ()
 
 // MARK: - AsyncOperationProgressHandler`2 Internals
 
 // MARK: - AsyncOperationWithProgressCompletedHandler`2
 
-public typealias AsyncOperationWithProgressCompletedHandler<TResult,TProgress> = (AnyIAsyncOperationWithProgress<TResult, TProgress>?, AsyncStatus) throws -> ()
+public typealias AsyncOperationWithProgressCompletedHandler<TResult,TProgress> = @Sendable (AnyIAsyncOperationWithProgress<TResult, TProgress>?, AsyncStatus) throws -> ()
 
 // MARK: - AsyncOperationWithProgressCompletedHandler`2 Internals
 
 // MARK: - DeferralCompletedHandler
 
-public typealias DeferralCompletedHandler = () throws -> ()
+public typealias DeferralCompletedHandler = @Sendable () throws -> ()
 
 // MARK: - DeferralCompletedHandler Internals
 
@@ -446,7 +446,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xED32A372, Data2: 0xF3C8, Data3: 0x4FAA, Data4: ( 0x9C,0xFB,0x47,0x01,0x48,0xDA,0x38,0x88 ) // ED32A372-F3C8-4FAA-9CFB-470148DA3888
     ) 
 
-    public class DeferralCompletedHandler: WindowsFoundation.IUnknown {
+    public class DeferralCompletedHandler: WindowsFoundation.IUnknown, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIDeferralCompletedHandler }
 
         open func Invoke() throws {
@@ -459,7 +459,7 @@ extension __ABI_Windows_Foundation {
 
 
     typealias DeferralCompletedHandlerWrapper = InterfaceWrapperBase<__IMPL_Windows_Foundation.DeferralCompletedHandlerBridge>
-    internal static var DeferralCompletedHandlerVTable: __x_ABI_CWindows_CFoundation_CIDeferralCompletedHandlerVtbl = .init(
+    internal static nonisolated(unsafe) var DeferralCompletedHandlerVTable: __x_ABI_CWindows_CFoundation_CIDeferralCompletedHandlerVtbl = .init(
         QueryInterface: { DeferralCompletedHandlerWrapper.queryInterface($0, $1, $2) },
         AddRef: { DeferralCompletedHandlerWrapper.addRef($0) },
         Release: { DeferralCompletedHandlerWrapper.release($0) },
@@ -481,13 +481,13 @@ public extension WinRTDelegateBridge where CABI == __x_ABI_CWindows_CFoundation_
 
 // MARK: - EventHandler`1
 
-public typealias EventHandler<T> = (Any?, T) throws -> ()
+public typealias EventHandler<T> = @Sendable (Any?, T) throws -> ()
 
 // MARK: - EventHandler`1 Internals
 
 // MARK: - TypedEventHandler`2
 
-public typealias TypedEventHandler<TSender,TResult> = (TSender, TResult) throws -> ()
+public typealias TypedEventHandler<TSender,TResult> = @Sendable (TSender, TResult) throws -> ()
 
 // MARK: - TypedEventHandler`2 Internals
 
@@ -548,7 +548,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IAsyncActionImpl: IAsyncAction, WinRTAbiImpl {
+    fileprivate class IAsyncActionImpl: IAsyncAction, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IAsyncActionBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -602,7 +602,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x5A648006, Data2: 0x843A, Data3: 0x4DA9, Data4: ( 0x86,0x5B,0x9D,0x26,0xE5,0xDF,0xAD,0x7B ) // 5A648006-843A-4DA9-865B-9D26E5DFAD7B
     ) 
 
-    public class IAsyncAction: WindowsFoundation.IInspectable {
+    public class IAsyncAction: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIAsyncAction }
 
         open func put_Completed(_ handler: WindowsFoundation.AsyncActionCompletedHandler?) throws {
@@ -630,7 +630,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IAsyncActionVTable: __x_ABI_CWindows_CFoundation_CIAsyncActionVtbl = .init(
+    internal static nonisolated(unsafe) var IAsyncActionVTable: __x_ABI_CWindows_CFoundation_CIAsyncActionVtbl = .init(
         QueryInterface: { IAsyncActionWrapper.queryInterface($0, $1, $2) },
         AddRef: { IAsyncActionWrapper.addRef($0) },
         Release: { IAsyncActionWrapper.release($0) },
@@ -767,7 +767,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IAsyncInfoImpl: IAsyncInfo, WinRTAbiImpl {
+    fileprivate class IAsyncInfoImpl: IAsyncInfo, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IAsyncInfoBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -809,7 +809,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x00000036, Data2: 0x0000, Data3: 0x0000, Data4: ( 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 ) // 00000036-0000-0000-C000-000000000046
     ) 
 
-    public class IAsyncInfo: WindowsFoundation.IInspectable {
+    public class IAsyncInfo: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIAsyncInfo }
 
         open func get_Id() throws -> UInt32 {
@@ -850,7 +850,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IAsyncInfoVTable: __x_ABI_CWindows_CFoundation_CIAsyncInfoVtbl = .init(
+    internal static nonisolated(unsafe) var IAsyncInfoVTable: __x_ABI_CWindows_CFoundation_CIAsyncInfoVtbl = .init(
         QueryInterface: { IAsyncInfoWrapper.queryInterface($0, $1, $2) },
         AddRef: { IAsyncInfoWrapper.addRef($0) },
         Release: { IAsyncInfoWrapper.release($0) },
@@ -1044,7 +1044,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IClosableImpl: IClosable, WinRTAbiImpl {
+    fileprivate class IClosableImpl: IClosable, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IClosableBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -1066,7 +1066,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x30D5A829, Data2: 0x7FA4, Data3: 0x4026, Data4: ( 0x83,0xBB,0xD7,0x5B,0xAE,0x4E,0xA9,0x9E ) // 30D5A829-7FA4-4026-83BB-D75BAE4EA99E
     ) 
 
-    public class IClosable: WindowsFoundation.IInspectable {
+    public class IClosable: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIClosable }
 
         open func Close() throws {
@@ -1077,7 +1077,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IClosableVTable: __x_ABI_CWindows_CFoundation_CIClosableVtbl = .init(
+    internal static nonisolated(unsafe) var IClosableVTable: __x_ABI_CWindows_CFoundation_CIClosableVtbl = .init(
         QueryInterface: { IClosableWrapper.queryInterface($0, $1, $2) },
         AddRef: { IClosableWrapper.addRef($0) },
         Release: { IClosableWrapper.release($0) },
@@ -1163,7 +1163,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IGetActivationFactoryImpl: IGetActivationFactory, WinRTAbiImpl {
+    fileprivate class IGetActivationFactoryImpl: IGetActivationFactory, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IGetActivationFactoryBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -1185,7 +1185,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x4EDB8EE2, Data2: 0x96DD, Data3: 0x49A7, Data4: ( 0x94,0xF7,0x46,0x07,0xDD,0xAB,0x8E,0x3C ) // 4EDB8EE2-96DD-49A7-94F7-4607DDAB8E3C
     ) 
 
-    public class IGetActivationFactory: WindowsFoundation.IInspectable {
+    public class IGetActivationFactory: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIGetActivationFactory }
 
         open func GetActivationFactory(_ activatableClassId: String) throws -> Any? {
@@ -1200,7 +1200,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IGetActivationFactoryVTable: __x_ABI_CWindows_CFoundation_CIGetActivationFactoryVtbl = .init(
+    internal static nonisolated(unsafe) var IGetActivationFactoryVTable: __x_ABI_CWindows_CFoundation_CIGetActivationFactoryVtbl = .init(
         QueryInterface: { IGetActivationFactoryWrapper.queryInterface($0, $1, $2) },
         AddRef: { IGetActivationFactoryWrapper.addRef($0) },
         Release: { IGetActivationFactoryWrapper.release($0) },
@@ -1292,7 +1292,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IMemoryBufferImpl: IMemoryBuffer, WinRTAbiImpl {
+    fileprivate class IMemoryBufferImpl: IMemoryBuffer, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IMemoryBufferBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -1320,7 +1320,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xFBC4DD2A, Data2: 0x245B, Data3: 0x11E4, Data4: ( 0xAF,0x98,0x68,0x94,0x23,0x26,0x0C,0xF8 ) // FBC4DD2A-245B-11E4-AF98-689423260CF8
     ) 
 
-    public class IMemoryBuffer: WindowsFoundation.IInspectable {
+    public class IMemoryBuffer: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIMemoryBuffer }
 
         open func CreateReference() throws -> WindowsFoundation.AnyIMemoryBufferReference? {
@@ -1334,7 +1334,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IMemoryBufferVTable: __x_ABI_CWindows_CFoundation_CIMemoryBufferVtbl = .init(
+    internal static nonisolated(unsafe) var IMemoryBufferVTable: __x_ABI_CWindows_CFoundation_CIMemoryBufferVtbl = .init(
         QueryInterface: { IMemoryBufferWrapper.queryInterface($0, $1, $2) },
         AddRef: { IMemoryBufferWrapper.addRef($0) },
         Release: { IMemoryBufferWrapper.release($0) },
@@ -1437,7 +1437,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IMemoryBufferReferenceImpl: IMemoryBufferReference, WinRTAbiImpl {
+    fileprivate class IMemoryBufferReferenceImpl: IMemoryBufferReference, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IMemoryBufferReferenceBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -1485,7 +1485,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xFBC4DD29, Data2: 0x245B, Data3: 0x11E4, Data4: ( 0xAF,0x98,0x68,0x94,0x23,0x26,0x0C,0xF8 ) // FBC4DD29-245B-11E4-AF98-689423260CF8
     ) 
 
-    public class IMemoryBufferReference: WindowsFoundation.IInspectable {
+    public class IMemoryBufferReference: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIMemoryBufferReference }
 
         open func get_Capacity() throws -> UInt32 {
@@ -1514,7 +1514,7 @@ extension __ABI_Windows_Foundation {
 
     }
 
-    internal static var IMemoryBufferReferenceVTable: __x_ABI_CWindows_CFoundation_CIMemoryBufferReferenceVtbl = .init(
+    internal static nonisolated(unsafe) var IMemoryBufferReferenceVTable: __x_ABI_CWindows_CFoundation_CIMemoryBufferReferenceVtbl = .init(
         QueryInterface: { IMemoryBufferReferenceWrapper.queryInterface($0, $1, $2) },
         AddRef: { IMemoryBufferReferenceWrapper.addRef($0) },
         Release: { IMemoryBufferReferenceWrapper.release($0) },
@@ -1682,7 +1682,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    public class IPropertyValueImpl : IPropertyValue, IReference {
+    public class IPropertyValueImpl : IPropertyValue, IReference, @unchecked Sendable {
         public typealias T = Any
         var _value: Any
         var propertyType : PropertyType
@@ -1797,7 +1797,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x4BD682DD, Data2: 0x7554, Data3: 0x40E9, Data4: ( 0x9A,0x9B,0x82,0x65,0x4E,0xDE,0x7E,0x62 ) // 4BD682DD-7554-40E9-9A9B-82654EDE7E62
     ) 
 
-    public class IPropertyValue: WindowsFoundation.IInspectable {
+    public class IPropertyValue: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIPropertyValue }
 
         open func get_Type() throws -> WindowsFoundation.PropertyType {
@@ -1906,10 +1906,12 @@ extension __ABI_Windows_Foundation {
 
         open func GetString() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetString(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
@@ -1963,178 +1965,226 @@ extension __ABI_Windows_Foundation {
 
         open func GetUInt8Array(_ value: inout [UInt8]) throws {
             var _value: WinRTArrayAbi<UINT8> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetUInt8Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetInt16Array(_ value: inout [Int16]) throws {
             var _value: WinRTArrayAbi<INT16> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetInt16Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetUInt16Array(_ value: inout [UInt16]) throws {
             var _value: WinRTArrayAbi<UINT16> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetUInt16Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetInt32Array(_ value: inout [Int32]) throws {
             var _value: WinRTArrayAbi<INT32> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetInt32Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetUInt32Array(_ value: inout [UInt32]) throws {
             var _value: WinRTArrayAbi<UINT32> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetUInt32Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetInt64Array(_ value: inout [Int64]) throws {
             var _value: WinRTArrayAbi<INT64> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetInt64Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetUInt64Array(_ value: inout [UInt64]) throws {
             var _value: WinRTArrayAbi<UINT64> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetUInt64Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetSingleArray(_ value: inout [Float]) throws {
             var _value: WinRTArrayAbi<FLOAT> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetSingleArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetDoubleArray(_ value: inout [Double]) throws {
             var _value: WinRTArrayAbi<DOUBLE> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetDoubleArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetChar16Array(_ value: inout [Character]) throws {
             var _value: WinRTArrayAbi<WCHAR> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetChar16Array(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetBooleanArray(_ value: inout [Bool]) throws {
             var _value: WinRTArrayAbi<boolean> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetBooleanArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetStringArray(_ value: inout [String]) throws {
             var _value: WinRTArrayAbi<HSTRING?> = (0, nil)
+            defer {
+                if let start = _value.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_value.count)) {
+                        WindowsDeleteString(element)
+                    }
+                }
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetStringArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetInspectableArray(_ value: inout [Any?]) throws {
             var _value: WinRTArrayAbi<UnsafeMutablePointer<C_IInspectable>?> = (0, nil)
+            defer {
+                if let start = _value.start {
+                    for element in UnsafeBufferPointer(start: start, count: Int(_value.count)) {
+                        _ = element?.pointee.lpVtbl.pointee.Release(element)
+                    }
+                }
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetInspectableArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abiBridge: __IMPL_.AnyBridge.self, abi: _value)
         }
 
         open func GetGuidArray(_ value: inout [Foundation.UUID]) throws {
             var _value: WinRTArrayAbi<WindowsFoundation.GUID> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetGuidArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetDateTimeArray(_ value: inout [WindowsFoundation.DateTime]) throws {
             var _value: WinRTArrayAbi<__x_ABI_CWindows_CFoundation_CDateTime> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetDateTimeArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetTimeSpanArray(_ value: inout [WindowsFoundation.TimeSpan]) throws {
             var _value: WinRTArrayAbi<__x_ABI_CWindows_CFoundation_CTimeSpan> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetTimeSpanArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetPointArray(_ value: inout [WindowsFoundation.Point]) throws {
             var _value: WinRTArrayAbi<__x_ABI_CWindows_CFoundation_CPoint> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetPointArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetSizeArray(_ value: inout [WindowsFoundation.Size]) throws {
             var _value: WinRTArrayAbi<__x_ABI_CWindows_CFoundation_CSize> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetSizeArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
         open func GetRectArray(_ value: inout [WindowsFoundation.Rect]) throws {
             var _value: WinRTArrayAbi<__x_ABI_CWindows_CFoundation_CRect> = (0, nil)
+            defer {
+                CoTaskMemFree(_value.start)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIPropertyValue.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetRectArray(pThis, &_value.count, &_value.start))
             }
-            defer { CoTaskMemFree(_value.start) }
             value = .from(abi: _value)
         }
 
     }
 
-    internal static var IPropertyValueVTable: __x_ABI_CWindows_CFoundation_CIPropertyValueVtbl = .init(
+    internal static nonisolated(unsafe) var IPropertyValueVTable: __x_ABI_CWindows_CFoundation_CIPropertyValueVtbl = .init(
         QueryInterface: { IPropertyValueWrapper.queryInterface($0, $1, $2) },
         AddRef: { IPropertyValueWrapper.addRef($0) },
         Release: { IPropertyValueWrapper.release($0) },
@@ -2653,7 +2703,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IStringableImpl: IStringable, WinRTAbiImpl {
+    fileprivate class IStringableImpl: IStringable, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IStringableBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -2675,21 +2725,23 @@ extension __ABI_Windows_Foundation {
         Data1: 0x96369F54, Data2: 0x8EB6, Data3: 0x48F0, Data4: ( 0xAB,0xCE,0xC1,0xB2,0x11,0xE6,0x27,0xC3 ) // 96369F54-8EB6-48F0-ABCE-C1B211E627C3
     ) 
 
-    public class IStringable: WindowsFoundation.IInspectable {
+    public class IStringable: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIStringable }
 
         open func ToString() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIStringable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.ToString(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
     }
 
-    internal static var IStringableVTable: __x_ABI_CWindows_CFoundation_CIStringableVtbl = .init(
+    internal static nonisolated(unsafe) var IStringableVTable: __x_ABI_CWindows_CFoundation_CIStringableVtbl = .init(
         QueryInterface: { IStringableWrapper.queryInterface($0, $1, $2) },
         AddRef: { IStringableWrapper.addRef($0) },
         Release: { IStringableWrapper.release($0) },
@@ -2778,7 +2830,7 @@ extension __IMPL_Windows_Foundation {
         }
     }
 
-    fileprivate class IWwwFormUrlDecoderEntryImpl: IWwwFormUrlDecoderEntry, WinRTAbiImpl {
+    fileprivate class IWwwFormUrlDecoderEntryImpl: IWwwFormUrlDecoderEntry, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IWwwFormUrlDecoderEntryBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -2805,30 +2857,34 @@ extension __ABI_Windows_Foundation {
         Data1: 0x125E7431, Data2: 0xF678, Data3: 0x4E8E, Data4: ( 0xB6,0x70,0x20,0xA9,0xB0,0x6C,0x51,0x2D ) // 125E7431-F678-4E8E-B670-20A9B06C512D
     ) 
 
-    public class IWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+    public class IWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry }
 
         open func get_Name() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Name(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         open func get_Value() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
     }
 
-    internal static var IWwwFormUrlDecoderEntryVTable: __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntryVtbl = .init(
+    internal static nonisolated(unsafe) var IWwwFormUrlDecoderEntryVTable: __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntryVtbl = .init(
         QueryInterface: { IWwwFormUrlDecoderEntryWrapper.queryInterface($0, $1, $2) },
         AddRef: { IWwwFormUrlDecoderEntryWrapper.addRef($0) },
         Release: { IWwwFormUrlDecoderEntryWrapper.release($0) },
@@ -2884,7 +2940,7 @@ public class IWwwFormUrlDecoderEntryMaker: MakeFromAbi {
 // MARK: - Deferral
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.deferral)
-public final class Deferral : WinRTClass, IClosable {
+public final class Deferral : WinRTClass, @unchecked Sendable, IClosable {
     private typealias SwiftABI = __ABI_Windows_Foundation.IDeferral
     private typealias CABI = __x_ABI_CWindows_CFoundation_CIDeferral
     private lazy var _default: SwiftABI! = getInterfaceForCaching()
@@ -2953,7 +3009,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xD6269732, Data2: 0x3B7F, Data3: 0x46A7, Data4: ( 0xB4,0x0B,0x4F,0xDC,0xA2,0xA2,0xC6,0x93 ) // D6269732-3B7F-46A7-B40B-4FDCA2A2C693
     ) 
 
-    public class IDeferral: WindowsFoundation.IInspectable {
+    public class IDeferral: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIDeferral }
 
         public func Complete() throws {
@@ -2968,7 +3024,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x65A1ECC5, Data2: 0x3FB5, Data3: 0x4832, Data4: ( 0x8C,0xA9,0xF0,0x61,0xB2,0x81,0xD1,0x3A ) // 65A1ECC5-3FB5-4832-8CA9-F061B281D13A
     ) 
 
-    public class IDeferralFactory: WindowsFoundation.IInspectable {
+    public class IDeferralFactory: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIDeferralFactory }
 
         public func Create(_ handler: WindowsFoundation.DeferralCompletedHandler?) throws -> IDeferral {
@@ -3015,7 +3071,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x59C7966B, Data2: 0xAE52, Data3: 0x5283, Data4: ( 0xAD,0x7F,0xA1,0xB9,0xE9,0x67,0x8A,0xDD ) // 59C7966B-AE52-5283-AD7F-A1B9E9678ADD
     ) 
 
-    public class IGuidHelperStatics: WindowsFoundation.IInspectable {
+    public class IGuidHelperStatics: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIGuidHelperStatics }
 
         public func CreateNewGuid() throws -> Foundation.UUID {
@@ -3050,7 +3106,7 @@ extension __ABI_Windows_Foundation {
 // MARK: - MemoryBuffer
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.memorybuffer)
-public final class MemoryBuffer : WinRTClass, IClosable, IMemoryBuffer {
+public final class MemoryBuffer : WinRTClass, @unchecked Sendable, IClosable, IMemoryBuffer {
     private typealias SwiftABI = __ABI_Windows_Foundation.IMemoryBuffer
     private typealias CABI = __x_ABI_CWindows_CFoundation_CIMemoryBuffer
     private lazy var _default: SwiftABI! = getInterfaceForCaching()
@@ -3119,7 +3175,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0xFBC4DD2B, Data2: 0x245B, Data3: 0x11E4, Data4: ( 0xAF,0x98,0x68,0x94,0x23,0x26,0x0C,0xF8 ) // FBC4DD2B-245B-11E4-AF98-689423260CF8
     ) 
 
-    public class IMemoryBufferFactory: WindowsFoundation.IInspectable {
+    public class IMemoryBufferFactory: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIMemoryBufferFactory }
 
         public func Create(_ capacity: UInt32) throws -> IMemoryBuffer {
@@ -3137,7 +3193,7 @@ extension __ABI_Windows_Foundation {
 // MARK: - Uri
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.uri)
-public final class Uri : WinRTClass, IStringable {
+public final class Uri : WinRTClass, @unchecked Sendable, IStringable {
     private typealias SwiftABI = __ABI_Windows_Foundation.IUriRuntimeClass
     private typealias CABI = __x_ABI_CWindows_CFoundation_CIUriRuntimeClass
     private lazy var _default: SwiftABI! = getInterfaceForCaching()
@@ -3313,87 +3369,105 @@ extension __ABI_Windows_Foundation {
         Data1: 0x9E365E57, Data2: 0x48B2, Data3: 0x4160, Data4: ( 0x95,0x6F,0xC7,0x38,0x51,0x20,0xBB,0xFC ) // 9E365E57-48B2-4160-956F-C7385120BBFC
     ) 
 
-    public class IUriRuntimeClass: WindowsFoundation.IInspectable {
+    public class IUriRuntimeClass: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClass }
 
         public func get_AbsoluteUri() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_AbsoluteUri(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_DisplayUri() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_DisplayUri(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Domain() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Domain(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Extension() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Extension(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Fragment() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Fragment(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Host() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Host(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Password() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Password(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Path() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Path(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_Query() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Query(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
@@ -3408,28 +3482,34 @@ extension __ABI_Windows_Foundation {
 
         public func get_RawUri() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_RawUri(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_SchemeName() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_SchemeName(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_UserName() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_UserName(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
@@ -3473,24 +3553,28 @@ extension __ABI_Windows_Foundation {
         Data1: 0x758D9661, Data2: 0x221C, Data3: 0x480F, Data4: ( 0xA3,0x39,0x50,0x65,0x66,0x73,0xF4,0x6F ) // 758D9661-221C-480F-A339-50656673F46F
     ) 
 
-    public class IUriRuntimeClassWithAbsoluteCanonicalUri: WindowsFoundation.IInspectable {
+    public class IUriRuntimeClassWithAbsoluteCanonicalUri: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri }
 
         public func get_AbsoluteCanonicalUri() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_AbsoluteCanonicalUri(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func get_DisplayIri() throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_DisplayIri(pThis, &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
@@ -3500,26 +3584,30 @@ extension __ABI_Windows_Foundation {
         Data1: 0xC1D432BA, Data2: 0xC824, Data3: 0x4452, Data4: ( 0xA7,0xFD,0x51,0x2B,0xC3,0xBB,0xE9,0xA1 ) // C1D432BA-C824-4452-A7FD-512BC3BBE9A1
     ) 
 
-    public class IUriEscapeStatics: WindowsFoundation.IInspectable {
+    public class IUriEscapeStatics: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIUriEscapeStatics }
 
         public func UnescapeComponent(_ toUnescape: String) throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             let _toUnescape = try! HString(toUnescape)
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriEscapeStatics.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.UnescapeComponent(pThis, _toUnescape.get(), &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
         public func EscapeComponent(_ toEscape: String) throws -> String {
             var value: HSTRING?
+            defer {
+                WindowsDeleteString(value)
+            }
             let _toEscape = try! HString(toEscape)
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIUriEscapeStatics.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.EscapeComponent(pThis, _toEscape.get(), &value))
             }
-            defer { WindowsDeleteString(value) }
             return .init(from: value)
         }
 
@@ -3529,7 +3617,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x44A9796F, Data2: 0x723E, Data3: 0x4FDF, Data4: ( 0xA2,0x18,0x03,0x3E,0x75,0xB0,0xC0,0x84 ) // 44A9796F-723E-4FDF-A218-033E75B0C084
     ) 
 
-    public class IUriRuntimeClassFactory: WindowsFoundation.IInspectable {
+    public class IUriRuntimeClassFactory: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory }
 
         public func CreateUri(_ uri: String) throws -> IUriRuntimeClass {
@@ -3559,7 +3647,7 @@ extension __ABI_Windows_Foundation {
 // MARK: - WwwFormUrlDecoder
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.wwwformurldecoder)
-public final class WwwFormUrlDecoder : WinRTClass, IIterable, IVectorView {
+public final class WwwFormUrlDecoder : WinRTClass, @unchecked Sendable, IIterable, IVectorView {
     public typealias T = AnyIWwwFormUrlDecoderEntry?
     private typealias SwiftABI = __ABI_Windows_Foundation.IWwwFormUrlDecoderRuntimeClass
     private typealias CABI = __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass
@@ -3673,16 +3761,18 @@ extension __ABI_Windows_Foundation {
         Data1: 0xD45A0451, Data2: 0xF225, Data3: 0x4542, Data4: ( 0x92,0x96,0x0E,0x1D,0xF5,0xD2,0x54,0xDF ) // D45A0451-F225-4542-9296-0E1DF5D254DF
     ) 
 
-    public class IWwwFormUrlDecoderRuntimeClass: WindowsFoundation.IInspectable {
+    public class IWwwFormUrlDecoderRuntimeClass: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass }
 
         public func GetFirstValueByName(_ name: String) throws -> String {
             var phstrValue: HSTRING?
+            defer {
+                WindowsDeleteString(phstrValue)
+            }
             let _name = try! HString(name)
             _ = try perform(as: __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetFirstValueByName(pThis, _name.get(), &phstrValue))
             }
-            defer { WindowsDeleteString(phstrValue) }
             return .init(from: phstrValue)
         }
 
@@ -3692,7 +3782,7 @@ extension __ABI_Windows_Foundation {
         Data1: 0x5B8C6B3D, Data2: 0x24AE, Data3: 0x41B5, Data4: ( 0xA1,0xBF,0xF0,0xC3,0xD5,0x44,0x84,0x5B ) // 5B8C6B3D-24AE-41B5-A1BF-F0C3D544845B
     ) 
 
-    public class IWwwFormUrlDecoderRuntimeClassFactory: WindowsFoundation.IInspectable {
+    public class IWwwFormUrlDecoderRuntimeClassFactory: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory }
 
         public func CreateWwwFormUrlDecoder(_ query: String) throws -> IWwwFormUrlDecoderRuntimeClass {
@@ -3711,7 +3801,7 @@ extension __ABI_Windows_Foundation {
 // MARK: - WwwFormUrlDecoderEntry
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.wwwformurldecoderentry)
-public final class WwwFormUrlDecoderEntry : WinRTClass, IWwwFormUrlDecoderEntry {
+public final class WwwFormUrlDecoderEntry : WinRTClass, @unchecked Sendable, IWwwFormUrlDecoderEntry {
     private typealias SwiftABI = __ABI_Windows_Foundation.IWwwFormUrlDecoderEntry
     private typealias CABI = __x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry
     private lazy var _default: SwiftABI! = getInterfaceForCaching()

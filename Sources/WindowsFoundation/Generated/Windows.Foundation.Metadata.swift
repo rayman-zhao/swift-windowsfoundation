@@ -71,7 +71,7 @@ extension __ABI_Windows_Foundation_Metadata {
         Data1: 0x997439FE, Data2: 0xF681, Data3: 0x4A11, Data4: ( 0xB4,0x16,0xC1,0x3A,0x47,0xE8,0xBA,0x36 ) // 997439FE-F681-4A11-B416-C13A47E8BA36
     ) 
 
-    public class IApiInformationStatics: WindowsFoundation.IInspectable {
+    public class IApiInformationStatics: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics }
 
         public func IsTypePresent(_ typeName: String) throws -> Bool {

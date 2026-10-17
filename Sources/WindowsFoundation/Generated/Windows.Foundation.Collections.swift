@@ -26,13 +26,13 @@ extension WindowsFoundation.CollectionChange: @retroactive Hashable, @retroactiv
 
 // MARK: - MapChangedEventHandler`2
 
-public typealias MapChangedEventHandler<K,V> = (AnyIObservableMap<K, V>?, AnyIMapChangedEventArgs<K>?) throws -> ()
+public typealias MapChangedEventHandler<K,V> = @Sendable (AnyIObservableMap<K, V>?, AnyIMapChangedEventArgs<K>?) throws -> ()
 
 // MARK: - MapChangedEventHandler`2 Internals
 
 // MARK: - VectorChangedEventHandler`1
 
-public typealias VectorChangedEventHandler<T> = (AnyIObservableVector<T>?, AnyIVectorChangedEventArgs?) throws -> ()
+public typealias VectorChangedEventHandler<T> = @Sendable (AnyIObservableVector<T>?, AnyIVectorChangedEventArgs?) throws -> ()
 
 // MARK: - VectorChangedEventHandler`1 Internals
 
@@ -298,7 +298,7 @@ extension __IMPL_Windows_Foundation_Collections {
         }
     }
 
-    fileprivate class IPropertySetImpl: IPropertySet, WinRTAbiImpl {
+    fileprivate class IPropertySetImpl: IPropertySet, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IPropertySetBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -374,12 +374,12 @@ extension __ABI_Windows_Foundation_Collections {
         Data1: 0x8A43ED9F, Data2: 0xF4E6, Data3: 0x4421, Data4: ( 0xAC,0xF9,0x1D,0xAB,0x29,0x86,0x82,0x0C ) // 8A43ED9F-F4E6-4421-ACF9-1DAB2986820C
     ) 
 
-    public class IPropertySet: WindowsFoundation.IInspectable {
+    public class IPropertySet: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CCollections_CIPropertySet }
 
     }
 
-    internal static var IPropertySetVTable: __x_ABI_CWindows_CFoundation_CCollections_CIPropertySetVtbl = .init(
+    internal static nonisolated(unsafe) var IPropertySetVTable: __x_ABI_CWindows_CFoundation_CCollections_CIPropertySetVtbl = .init(
         QueryInterface: { IPropertySetWrapper.queryInterface($0, $1, $2) },
         AddRef: { IPropertySetWrapper.addRef($0) },
         Release: { IPropertySetWrapper.release($0) },
@@ -462,7 +462,7 @@ extension __IMPL_Windows_Foundation_Collections {
         }
     }
 
-    fileprivate class IVectorChangedEventArgsImpl: IVectorChangedEventArgs, WinRTAbiImpl {
+    fileprivate class IVectorChangedEventArgsImpl: IVectorChangedEventArgs, WinRTAbiImpl, @unchecked Sendable {
         fileprivate typealias Bridge = IVectorChangedEventArgsBridge
         fileprivate let _default: Bridge.SwiftABI
         fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
@@ -489,7 +489,7 @@ extension __ABI_Windows_Foundation_Collections {
         Data1: 0x575933DF, Data2: 0x34FE, Data3: 0x4480, Data4: ( 0xAF,0x15,0x07,0x69,0x1F,0x3D,0x5D,0x9B ) // 575933DF-34FE-4480-AF15-07691F3D5D9B
     ) 
 
-    public class IVectorChangedEventArgs: WindowsFoundation.IInspectable {
+    public class IVectorChangedEventArgs: WindowsFoundation.IInspectable, @unchecked Sendable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs }
 
         open func get_CollectionChange() throws -> WindowsFoundation.CollectionChange {
@@ -510,7 +510,7 @@ extension __ABI_Windows_Foundation_Collections {
 
     }
 
-    internal static var IVectorChangedEventArgsVTable: __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl = .init(
+    internal static nonisolated(unsafe) var IVectorChangedEventArgsVTable: __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl = .init(
         QueryInterface: { IVectorChangedEventArgsWrapper.queryInterface($0, $1, $2) },
         AddRef: { IVectorChangedEventArgsWrapper.addRef($0) },
         Release: { IVectorChangedEventArgsWrapper.release($0) },
@@ -640,7 +640,7 @@ extension __ABI_Windows_Foundation_Collections {
 // MARK: - PropertySet
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.propertyset)
-public final class PropertySet : WinRTClass, IObservableMap, IMap, IIterable, IPropertySet {
+public final class PropertySet : WinRTClass, @unchecked Sendable, IObservableMap, IMap, IIterable, IPropertySet {
     public typealias K = String
     public typealias V = Any?
     public typealias T = AnyIKeyValuePair<String, Any?>?
@@ -759,7 +759,7 @@ extension __ABI_Windows_Foundation_Collections {
 // MARK: - StringMap
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.stringmap)
-public final class StringMap : WinRTClass, IMap, IIterable, IObservableMap {
+public final class StringMap : WinRTClass, @unchecked Sendable, IMap, IIterable, IObservableMap {
     public typealias K = String
     public typealias V = String
     public typealias T = AnyIKeyValuePair<String, String>?
@@ -876,7 +876,7 @@ extension __ABI_Windows_Foundation_Collections {
 // MARK: - ValueSet
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.valueset)
-public final class ValueSet : WinRTClass, IObservableMap, IMap, IIterable, IPropertySet {
+public final class ValueSet : WinRTClass, @unchecked Sendable, IObservableMap, IMap, IIterable, IPropertySet {
     public typealias K = String
     public typealias V = Any?
     public typealias T = AnyIKeyValuePair<String, Any?>?
