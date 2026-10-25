@@ -30,6 +30,12 @@ import CWinRT
         }
     }
 
+    // invokeAll's body closure is nonisolated, so @MainActor handlers can't be invoked
+    // through it; main-actor event types iterate this snapshot instead.
+    public var currentHandlers: [Handler] {
+        lock.withLock(.shared) { subscriptions.map(\.handler) }
+    }
+
     private func append(_ handler: Handler) -> CWinRT.EventRegistrationToken {
         return lock.withLock(.exclusive) {
             let token = CWinRT.EventRegistrationToken(value: nextToken)

@@ -24,7 +24,9 @@ public struct Event<Handler> {
     }
 }
 
-public struct EventCleanup: Disposable {
+// handler registration/disposal happens from the main actor, but the cleanup handle is
+// handed back across isolation domains (vtable thunks) like every other projected value
+public struct EventCleanup: Disposable, @unchecked Sendable {
     fileprivate let token: EventRegistrationToken
     let closeAction: (_ token: EventRegistrationToken) -> Void
     public init(token: EventRegistrationToken, closeAction: @escaping (_ token: EventRegistrationToken) -> Void) {

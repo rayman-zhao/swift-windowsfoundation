@@ -5,6 +5,15 @@ public protocol Initializable {
   init()
 }
 
+// MainActor.assumeIsolated requires its closure to be Sendable, so vtable thunks for
+// main-actor members that return a WinRT Object (Swift `Any`) pass the result out
+// through this unchecked box instead.
+@_spi(WinRTInternal)
+public final class AnyResultBox: @unchecked Sendable {
+  public var value: Any?
+  public init() {}
+}
+
 public protocol HasIID {
   static var IID: WindowsFoundation.IID { get }
 }
